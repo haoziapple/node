@@ -1,7 +1,4 @@
 `use strict`;
-
 var greet = require('./hello');
-
-var s='Wanghao';
-
+var s = 'Wanghao';
 greet(s);

@@ -5,7 +5,7 @@ console.log('Hello World');
 var s = "Hello";
 
 function greet(name) {
-	console.log(s+','+name+'!');
+	console.log(s + ',' + name + '!');
 }
 
 function hello() {
@@ -13,7 +13,7 @@ function hello() {
 }
 
 // 三种导出方法
-module.exports=greet;
+module.exports = greet;
 
 // module.exports = {
 //     hello: hello,
