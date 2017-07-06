@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var data = {
+        a: 1
+    };
+    var vm = new Vue({
+        data: data
+    });
+
+    // 测试生命周期钩子
+    // created,mounted,updated,destroyed
+    var vm2 = new Vue({
+        data: {
+            a: 1
+        },
+        created: function() {
+            // this指向vm实例
+            console.log('a is: ' + this.a);
+        }
+    })
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
