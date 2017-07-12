@@ -76,3 +76,23 @@ deploy:
   repo: git@github.com:haoziapple/haoziapple.github.io.git
   branch: master
   message: update
+
+# yilia theme add
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true

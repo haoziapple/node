@@ -2,14 +2,15 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  随笔: /tags/note/
+  个人计划: /categories/plan
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/haoziapple"
+  weibo: "http://weibo.com/u/1842082177"
+  # rss: "#"
+  # zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -17,7 +18,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:512840232@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -68,7 +69,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: /images/avtar.jpg
 
 #是否开启分享
 share_jia: true
