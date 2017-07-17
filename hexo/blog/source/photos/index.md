@@ -10,15 +10,27 @@ noDate: 'true'
 </li>
 </ul> -->
 
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- <link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet">
-<!-- <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
 <style> 
-img{width:300px; height:100px} 
 </style> 
 
-<div class="instagram"><section class="archives album"><ul class="img-box-ul"></ul></section></div>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/require.js/2.3.3/require.min.js"></script>
+<div>
+<ul class="pagination">
+	<li><a href="#">&laquo;</a></li>
+	<li><a href="#">1</a></li>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">&raquo;</a></li>
+</ul>
+</div>
+
+
 
 <!-- <script src="/js/photo.js"></script> -->
