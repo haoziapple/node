@@ -1,10 +1,12 @@
+ 'use strict';
+
 define([], function () {
     return {
         page: 1,
         offset: 20,
         init: function () {
             var that = this;
-            $.getJSON("/photo/output.json", function (data) {
+            $.getJSON("output.json", function (data) {
                 that.render(that.page, data);
 
                 that.scroll(data);
