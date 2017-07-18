@@ -12,25 +12,29 @@ noDate: 'true'
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <!-- <link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
-<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<script src="/js/bootstrap.min.js"></script>
 
 
 <style> 
+.myPhotosList {
+	display:inline-flex;
+}
 </style> 
 
+<div class="img-box">
+</div>
+
 <div>
-<ul class="pagination">
-	<li><a href="#">&laquo;</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">&raquo;</a></li>
+<ul class="pagination myPhotosList">
+	<li class="mylist"><a href="#">1</a></li>
 </ul>
 </div>
 
-
-
-<!-- <script src="/js/photo.js"></script> -->
+<script src="/js/photo.js"></script>
+<script>
+$("li.mylist").click(function () {
+    console.log($(this).text());
+	loadMyPhotos($(this).text())
+});
+</script>
