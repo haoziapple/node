@@ -1,7 +1,4 @@
----
-title: photos
-noDate: 'true'
----
+--- title: photos noDate: 'true' ---
 
 <!-- <ul>
 <li><div class="img-box">
@@ -16,25 +13,25 @@ noDate: 'true'
 <script src="/js/bootstrap.min.js"></script>
 
 
-<style> 
-.myPhotosList {
-	display:inline-flex;
-}
-</style> 
+<style>
+	.myPhotosList {
+		display: inline-flex;
+	}
+</style>
 
 <div class="img-box">
 </div>
 
 <div>
-<ul class="pagination myPhotosList">
-	<li class="mylist"><a href="#">1</a></li>
-</ul>
+	<ul class="pagination myPhotosList">
+		<li class="mylist"><a href="#">1</a></li>
+	</ul>
 </div>
 
 <script src="/js/photo.js"></script>
 <script>
 $("li.mylist").click(function () {
     console.log($(this).text());
-	loadMyPhotos($(this).text())
+	loadMyPhotos($(this).text());
 });
 </script>
