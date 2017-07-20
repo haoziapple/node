@@ -1,4 +1,7 @@
---- title: photos noDate: 'true' ---
+---
+title: photos
+noDate: 'true'
+---
 
 <!-- <ul>
 <li><div class="img-box">
