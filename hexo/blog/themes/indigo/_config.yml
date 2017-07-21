@@ -24,9 +24,12 @@ menu:
   weibo:
     url: http://weibo.com/u/1842082177
     target: _blank
-  link:
+  picture-o:
     text: photos
     url: /photos
+  code:
+    text: notes
+    url: /notes
 
 # 你的头像url
 avatar: /images/avtar.jpg
@@ -134,7 +137,7 @@ visit_counter:
 # 动态定义title
 title_change:
   normal: (つェ⊂)咦!又好了!
-  leave: 嗯.去哪里了?
+  leave: 嗯?去哪里了?
 
 # 设置为 true 发布后将使用 unpkg cdn
 cdn: true

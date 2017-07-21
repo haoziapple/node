@@ -1,21 +1,13 @@
 ---
-title: photos
+title: 耗子的贴图空间
 noDate: 'true'
 ---
 
-<!-- <ul>
-<li><div class="img-box">
-<a class="img-bg" rel="example_group" href="http://osus8erpv.bkt.clouddn.com/avtar.jpg?raw=true"></a>
-<img src="http://osus8erpv.bkt.clouddn.com/avtar.jpg?raw=true" />
-</li>
-</ul> -->
-
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<!-- <link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <script src="/js/bootstrap.min.js"></script>
 
-
+# 个人相册
 <style>
 	.myPhotosList {
 		display: inline-flex;
