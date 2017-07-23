@@ -3,8 +3,8 @@ title: 耗子的贴图空间
 noDate: 'true'
 ---
 
-<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
-<script src="/js/jquery-2.1.0.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!--<script src="/js/jquery-2.1.0.min.js"></script>-->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <script src="/js/bootstrap.min.js"></script>
 
