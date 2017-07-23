@@ -38,6 +38,11 @@ $.getJSON("output.json", function (data) {
     var li = "";
     var rowNum = 1;
     var page = 1;
+    // 清空img-box
+    $(".img-box").html("")
+    // 初始化第一行图片
+    var row = '<div class="img-box-ul' + rowNum + ' row"></div>';
+    $(".img-box").append(row);
     for (var i = 0; i < 20 && i < data.length; i++) {
         li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
             '<img class="img-responsive" src="http://osus8erpv.bkt.clouddn.com/' + data[i] + '?raw=true" />' +
