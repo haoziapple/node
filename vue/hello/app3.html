@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>app3</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app3">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+</body>
+<script>
+    var app3 = new Vue({
+        el: '#app3',
+        data: {
+            seen:true
+        }
+    });
+</script>
+
+</html>

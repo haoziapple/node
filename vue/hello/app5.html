@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>app5</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+</body>
+<script>
+    var app5 = new Vue({
+        el:'#app5',
+        data:{
+            message:'hello vue.js'
+        },
+        methods:{
+            reverseMessage:function(){
+                this.message=this.message.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</html>

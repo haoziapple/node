@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app6">
+        <p>{{message}}</p>
+        <input type="text" v-model="message">
+    </div>
+</body>
+<script>
+    var app6 = new Vue({
+        el:'#app6',
+        data:{
+            message:'Hello Wanhao!'
+        }
+    });
+</script>
+
+</html>
