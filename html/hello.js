@@ -5,7 +5,7 @@ $("h1").click(function () {
         data: "{\"examKey\": \"string\",\"userCode\": \"string\",\"userKey\": \"string\"}",
         dataType: "json",
         contentType: "application/json",
-        url: "http://10.108.26.61:8081/starter/order/test",
+        url: "http://10.108.26.61:8081/starter/wap/order/test",
         //http://10.108.26.61:8081/starter/order/submit
         //http://10.108.26.113:8080/fyctb-service/api/shareInfo/queryShareInfo
         success: function (ret) {
