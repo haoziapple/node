@@ -1,3 +1,3 @@
 # node
 - code of learning node
-- use to learn fornt-end
+- use to learn front-end
