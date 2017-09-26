@@ -1,0 +1,35 @@
+{
+  "name": "brads-handlebars-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --config webpack.config.js && webpack-dev-server --inline"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.5.0",
+    "jquery": "^3.2.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.0",
+    "md5": "^2.2.1",
+    "style-loader": "^0.14.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "html-withimg-loader": "^0.1.16",
+    "lodash": "^4.17.4",
+    "modernizr": "^3.5.0",
+    "nice-validator": "^1.1.2"
+  }
+}
