@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event example-2</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="example-2">
+        <button v-on:click="greet">Greet</button>
+    </div>
+</body>
+<script>
+    var example2 = new Vue({
+        el:'#example-2',
+        data:{
+            name:'Vue.js'
+        },
+        // 在methods对象中定义方法
+        methods:{
+            greet: function (event) {
+                // this指向当前vue实例
+                console.log('This app name is ' + this.name);
+                if(event)
+                    console.log(event.target.tagName);
+            }
+        }
+    })
+</script>
+</html>

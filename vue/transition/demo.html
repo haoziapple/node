@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transition-demo</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="./demo.css">
+</head>
+
+<body>
+    <div id="demo">
+        <button v-on:click="show = !show">
+    Toggle
+  </button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+</body>
+<script src="./demo.js"></script>
+
+</html>
