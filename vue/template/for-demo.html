@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>for demo</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <ul id="example-1">
+        <li v-for="item in items">
+            {{ item.message }}
+        </li>
+    </ul>
+    <ul id="example-2">
+        <li v-for="(item, index) in items">
+            {{parentMessage}} - {{index+1}} - {{item.message}}
+        </li>
+    </ul>
+    <ul id="v-for-object" class="demo">
+        <li v-for="value in object">
+            {{value}}
+        </li>
+    </ul>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#example-1',
+        data: {
+            items: [
+                { message: 'Foo'},
+                { message: 'Bar'}
+            ]
+        }
+    });
+    var vm2 = new Vue({
+        el: '#example-2',
+        data: {
+            parentMessage: 'Parent',
+            items: [
+                { message: 'Foo'},
+                { message: 'Bar'}
+            ]
+        }
+    });
+    var vm3 = new Vue({
+        el:'#v-for-object',
+        data: {
+            object: {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: 30
+            }
+        }
+    })
+</script>
+
+</html>

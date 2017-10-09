@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event demo</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+<div id="example-1">
+    <button v-on:click="counter += 1">增加 1</button>
+    <p>这个按钮被点击了 {{ counter }} 次。</p>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#example-1',
+        data:{
+            counter:0
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>if-demo</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="test1">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <template v-if="test2">
+            <h1>Title2</h1>
+            <p>Paragraph 3</p>
+            <p>Paragraph 4</p>
+        </template>
+        <div v-if="Math.random() > 0.5">
+            Now you see me
+        </div>
+        <div v-else>
+            Now you don't
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            test1:true,
+            test2:false
+        }
+    })
+</script>
+
+</html>
