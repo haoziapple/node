@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>component demo</title>
+    <script src="../vue.js"></script>
+    <script>
+        // 注册组件
+        // 确保在初始化根实例之前注册组件
+        Vue.component('my-component', {
+            template: '<div>A custom component!</div>'
+        })
+    </script>
+</head>
+
+<body>
+    <div id="example">
+        <my-component></my-component>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#example'
+    })
+</script>
+
+</html>

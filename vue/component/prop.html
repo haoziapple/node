@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>prop demo</title>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.component('child', {
+            //声明props
+            props:['message'],
+            // 就像 data 一样，prop 也可以在模板中使用
+            // 同样也可以在 vm 实例中通过 this.message 来使用
+            template:'<span>{{message}}</span>'
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <child message="wang hao!"></child>
+        <!--动态prop-->
+        <input v-model="parentMsg">
+        <br>
+        <child v-bind:message="parentMsg"></child>
+    </div>
+</body>
+<script>
+    var t = new Vue({
+        el:'#app',
+        data:{
+            parentMsg:'test'
+        }
+    })
+</script>
+
+</html>
