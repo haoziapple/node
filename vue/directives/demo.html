@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令DEMO</title>
+    <script src="../vue.js"></script>
+    <script>
+        // 注册一个全局自定义指令 v-focus
+        Vue.directive('focus', {
+            // 当绑定元素插入到DOM中
+            inserted: function (el) {
+                console.log("inserted function")
+                // 聚焦元素
+                el.focus()
+            }
+        });
+        Vue.directive('demo', {
+            bind: function (el, binding, vnode) {
+                var s = JSON.stringify
+                el.innerHTML =
+                'name: '       + s(binding.name) + '<br>' +
+                'value: '      + s(binding.value) + '<br>' +
+                'expression: ' + s(binding.expression) + '<br>' +
+                'argument: '   + s(binding.arg) + '<br>' +
+                'modifiers: '  + s(binding.modifiers) + '<br>' +
+                'vnode keys: ' + Object.keys(vnode).join(', ')
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="insert">
+        <input v-focus type="text">
+    </div>
+    <div id="demo" v-demo:foo.a.b="message"></div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#insert'
+    })
+    var app2 = new Vue({
+        el: '#demo',
+        data: {
+            message: 'Hello WangHao!'
+        }
+    })
+</script>
+
+</html>
