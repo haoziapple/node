@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>prop Demo--多个prop传递</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <!--title1,author1,content1是组件中的prop，绑定父组件中的data-->
+    <div id="app">
+        <post :title1="title" :author1="author" :content1="content"></post>
+    </div>
+    <template id="post-template">
+        <!--没有这个div的话会报错：-->
+        <!--Component template should contain exactly one root element-->
+        <div>
+            <h1>{{title1}}</h1>
+            <h4>{{author1}}</h4>
+            <p>{{content1}}</p>
+        </div>
+    </template>
+</body>
+<script>
+    Vue.component('post', {
+        template: '#post-template',
+        props: ['title1', 'author1', 'content1']
+    });
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            author:'wanghao',
+            title:'Hello the World!',
+            content:'learn vue component & props'
+        }
+    })
+</script>
+
+</html>

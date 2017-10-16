@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Filter Demo</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <h4>{{message | uppercase}}</h4>
+        <!--可以使用自带的json序列化字串-->
+        <h4>{{$data | json }}</h4>
+        <!--filter可以连接起来-->
+        <!--<h1>{{$data | json | uppercase}}</h1>-->
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data: {
+                message:'hello wanghao!'
+            },
+            filters: {
+                uppercase: function (value) {
+                    return value.toUpperCase()
+                }
+            }
+        })
+    </script>
+</body>
+</html>
