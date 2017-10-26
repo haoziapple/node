@@ -32,17 +32,13 @@ entries['bundle'] = `./main.js`;
 console.log("=====" + path.resolve(__dirname, "./dist"));
 module.exports = {
     entry: entries,
-    // entry: './main.js',
-   
     output: {
         path: path.resolve(__dirname, "./dist"),
+        // 待解决：publicPath的设置问题
+        // 设置了publicPath会导致devServer无法监听js的变化，不设置又会导致上面htmlPlugin生成页面的js地址错误
         // publicPath: '../',
         filename: '[name].js'
     },
-    // output: {
-    //     path: path.resolve(__dirname, "./dist"),
-    //     filename: 'bundle.js'
-    // },
     plugins: configPlugins,
     devServer: {
         contentBase: path.resolve(__dirname, "./dist"),
