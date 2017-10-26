@@ -36,6 +36,7 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
         // 待解决：publicPath的设置问题
         // 设置了publicPath会导致devServer无法监听js的变化，不设置又会导致上面htmlPlugin生成页面的js地址错误
+        // 已解决：设置devServer的publicPath
         publicPath: '../',
         filename: '[name].js'
     },
@@ -43,5 +44,6 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, "./dist"),
         port: 8888,
+        publicPath: '/'
     }
 };
