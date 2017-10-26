@@ -11,7 +11,8 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     // If you have multiple webpack entry points, 
     // they will all be included with script tags in the generated HTML.
@@ -28,6 +29,9 @@ module.exports = {
     ],
     // 使用source-map
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
     module: {
         rules: [
             {
