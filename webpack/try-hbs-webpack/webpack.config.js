@@ -1,4 +1,4 @@
-var path = require("path");
+const path = require("path");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var configPlugins = [];//webpack plugins
@@ -36,7 +36,7 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
         // 待解决：publicPath的设置问题
         // 设置了publicPath会导致devServer无法监听js的变化，不设置又会导致上面htmlPlugin生成页面的js地址错误
-        // publicPath: '../',
+        publicPath: '../',
         filename: '[name].js'
     },
     plugins: configPlugins,
