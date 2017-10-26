@@ -6,3 +6,4 @@ var post = {
 
 console.log("ttt");
 document.write('<h1>Hello World!</h1>');
+console.error("test error!");

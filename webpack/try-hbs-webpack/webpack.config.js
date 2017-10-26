@@ -10,7 +10,7 @@ var config = require('./common/config.js');
 var pageArr = config.pageArr;
 
 pageArr.forEach((str) => {
-    console.log("测试"+str);
+    console.log("测试" + str);
     var mod = str.split('/')[0];
     var page = str.split('/')[1];
 
@@ -44,6 +44,12 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, "./dist"),
         port: 8888,
-        publicPath: '/'
+        publicPath: '/',
+        open: true,
+        openPage: '/view',
+        overlay: {
+            warnings: true,
+            errors: true
+        },
     }
 };
