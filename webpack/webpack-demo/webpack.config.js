@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -26,12 +27,15 @@ module.exports = {
             title: 'Output Management',
             // 使用chunks指定导入哪些js
             chunks: ['index'],
-        })
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin
     ],
     // 使用source-map
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     module: {
         rules: [
