@@ -12,7 +12,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        // publicPath: '/'
     },
     // If you have multiple webpack entry points, 
     // they will all be included with script tags in the generated HTML.
@@ -24,6 +24,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Output Management',
+            // 使用chunks指定导入哪些js
             chunks: ['index'],
         })
     ],
