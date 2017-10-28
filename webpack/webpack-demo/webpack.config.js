@@ -29,7 +29,7 @@ module.exports = {
             chunks: ['index'],
         }),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin
+        new webpack.HotModuleReplacementPlugin()
     ],
     // 使用source-map
     devtool: 'inline-source-map',

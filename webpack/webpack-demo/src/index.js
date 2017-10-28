@@ -2,6 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import pic from './21.jpg';
 import Data from './data.xml';
+import printMe from './print.js';
 
 function component() {
     var element = document.createElement('div');
@@ -22,3 +23,10 @@ function component() {
 
 document.body.appendChild(component());
 console.log('hot hot!');
+
+if(module.hot) {
+    module.hot.accept('./print.js', function() {
+        console.log('Accepting the updated printMe module!');
+        printMe();
+    })
+}
