@@ -8,7 +8,7 @@
         name: 'haozi',
         data () {
             return {
-                msg: 'Welcome to haozi vue!'
+                msg: 'Welcome to haozixiaowang vue!'
             }
         }
     }
