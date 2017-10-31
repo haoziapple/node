@@ -23,7 +23,7 @@ li {
 <body>
 <div id="demo">
   <h1>Latest Vue.js Commits</h1>
-  <template v-for="branch in branches">
+  <template v-for="branch in branches" v-if="branch.length > 3">
     <input type="radio"
       :id="branch"
       :value="branch"
@@ -42,9 +42,8 @@ li {
   </ul>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://unpkg.com/vue@2.5.0/dist/vue.min.js"></script>
-<script src="chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/lib/screenlog.js"></script><script>
+<script>
 var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=4&sha='
 
 /**
@@ -57,7 +56,7 @@ var demo = new Vue({
 
   data: {
     branches: ['master', 'dev', 'weex', 'csp'],
-    currentBranch: 'dev',
+    currentBranch: 'master',
     commits: null
   },
 
@@ -74,6 +73,10 @@ var demo = new Vue({
       var newline = v.indexOf('\n')
       return newline > 0 ? v.slice(0, newline) : v
     },
+    // RegExp修饰符：
+    // i执行对大小写不敏感的匹配 
+    // g执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）
+    // m执行多行匹配
     formatDate: function (v) {
       return v.replace(/T|Z/g, ' ')
     }

@@ -96,19 +96,19 @@ th.active .arrow {
     Search <input name="query" v-model="searchQuery">
   </form>
   <demo-grid
-    :data="gridData"
+    :datas="gridData"
     :columns="gridColumns"
     :filter-key="searchQuery">
   </demo-grid>
 </div>
 
 <script src="https://unpkg.com/vue@2.5.0/dist/vue.min.js"></script>
-<script src="chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/lib/screenlog.js"></script><script>
+<script>
 // register the grid component
 Vue.component('demo-grid', {
   template: '#grid-template',
   props: {
-    data: Array,
+    datas: Array,
     columns: Array,
     filterKey: String
   },
@@ -125,24 +125,31 @@ Vue.component('demo-grid', {
   computed: {
     filteredData: function () {
       var sortKey = this.sortKey
+
+      // 为什么不直接赋值this.filterKey.toLowerCase()？？
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
       var order = this.sortOrders[sortKey] || 1
-      var data = this.data
+      var datas = this.datas
       if (filterKey) {
-        data = data.filter(function (row) {
+        // 查询过滤
+        // Array.prototype.some(),至少有一个元素满足要求时返回true
+        datas = datas.filter(function (row) {
           return Object.keys(row).some(function (key) {
             return String(row[key]).toLowerCase().indexOf(filterKey) > -1
           })
         })
       }
+      // 空字串做if判断时会作为false
       if (sortKey) {
-        data = data.slice().sort(function (a, b) {
+        // 排序操作
+        // slice()浅拷贝，原始数组不修改
+        datas = datas.slice().sort(function (a, b) {
           a = a[sortKey]
           b = b[sortKey]
           return (a === b ? 0 : a > b ? 1 : -1) * order
         })
       }
-      return data
+      return datas
     }
   },
   filters: {
@@ -163,12 +170,12 @@ var demo = new Vue({
   el: '#demo',
   data: {
     searchQuery: '',
-    gridColumns: ['name', 'power'],
+    gridColumns: ['name', 'power', 'rate'],
     gridData: [
-      { name: 'Chuck Norris', power: Infinity },
-      { name: 'Bruce Lee', power: 9000 },
-      { name: 'Jackie Chan', power: 7000 },
-      { name: 'Jet Li', power: 8000 }
+      { name: 'Chuck Norris', power: Infinity, rate: 'level1' },
+      { name: 'Bruce Lee', power: 9000, rate: 'level2'},
+      { name: 'Jackie Chan', power: 7000, rate: 'level3'  },
+      { name: 'Jet Li', power: 8000, rate: 'level12'  }
     ]
   }
 })

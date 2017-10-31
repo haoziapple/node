@@ -19,6 +19,13 @@ ul {
   line-height: 1.5em;
   list-style-type: dot;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
 </style>
 </head>
 <body>
@@ -26,12 +33,13 @@ ul {
 <script type="text/x-template" id="item-template">
   <li>
     <div
-      :class="{bold: isFolder}"
+      v-bind:class="{bold: isFolder}"
       @click="toggle"
       @dblclick="changeType">
       {{model.name}}
       <span v-if="isFolder">[{{open ? '-' : '+'}}]</span>
     </div>
+    <transition name="fade">  
     <ul v-show="open" v-if="isFolder">
       <item
         class="item"
@@ -40,6 +48,7 @@ ul {
       </item>
       <li class="add" @click="addChild">+</li>
     </ul>
+    </transition>
   </li>
 </script>
 
