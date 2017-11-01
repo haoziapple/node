@@ -92,7 +92,8 @@
           <div class="modal-footer">
             <slot name="footer">
               default footer
-              <button class="modal-default-button" @click="$emit('close')">
+              {{childProperty}}
+              <button class="modal-default-button" @click="$emit('testfunction')">
                 OK
               </button>
             </slot>
@@ -107,12 +108,18 @@
 <div id="app">
   <button id="show-modal" @click="showModal = true">Show Modal</button>
   <!-- use the modal component, pass in the prop -->
-  <modal v-if="showModal" @close="showModal = false">
+  <modal v-if="showModal" @testfunction="showModal = false">
     <!--
       you can use custom content here to overwrite
       default content
     -->
     <h3 slot="header">custom header</h3>
+    <div slot = "body">
+        <h1>wanghao</h1>
+        <p>test</p>
+    </div>
+    <!--父组件中定义了slot，子组件中的默认内容会被覆盖掉-->
+    <!--<div slot = "footer">test footer</div>-->
   </modal>
 </div>
 
@@ -120,14 +127,19 @@
 <script>
 // register modal component
 Vue.component('modal', {
-  template: '#modal-template'
+  template: '#modal-template',
+  data: function () {
+    return {
+      childProperty: 'test p'
+    }
+  }
 })
 
 // start app
 new Vue({
   el: '#app',
   data: {
-    showModal: false
+    showModal: true
   }
 })
 //# sourceURL=userscript.js
