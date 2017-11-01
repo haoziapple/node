@@ -1,6 +1,8 @@
 <template>
-    <div class="hello"><h1>{{msg}}</h1><h2>test</h2></div>
-    
+    <div class="hello">
+        <h1>{{msg}}</h1>
+        <h2>test</h2>
+    </div>
 </template>
 
 <script>
@@ -8,7 +10,7 @@
         name: 'haozi',
         data () {
             return {
-                msg: 'Welcome to haozixiaowang vue!'
+                msg: 'Welcome to haozixiaowang vue!!'
             }
         }
     }
