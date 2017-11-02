@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <!--<router-view/>-->
+    <div id="router-link">
+      <router-link to="/">go to index</router-link>
+      <router-link to="/haozi">go to /haozi</router-link>
+    </div>
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view/>
     <haozi></haozi>
   </div>
 </template>
