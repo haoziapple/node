@@ -9,5 +9,13 @@
 <script>
     export default {
         name: 'component1',
+        methods: {
+            
+        },
+        data () {
+            return {
+                
+            }
+        }
     }
 </script>
