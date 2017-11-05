@@ -16,6 +16,12 @@
             return {
                 
             }
+        },
+        render: function (createElement, context) {
+            
+        },
+        filters: {
+            
         }
     }
 </script>
