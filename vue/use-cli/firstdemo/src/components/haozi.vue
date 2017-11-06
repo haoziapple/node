@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="haozi">
         <h1>{{msg}}</h1>
         <h2>test</h2>
     </div>
@@ -21,3 +21,11 @@
         }
     }
 </script>
+
+<style>
+    .haozi {
+        border-width: 5px;
+        border-color: yellowgreen;
+        border-style: solid
+    }
+</style>
