@@ -12,6 +12,12 @@
             return {
                 msg: 'Welcome to haozixiaowang vue!!'
             }
+        },
+        render: function (createElement, context) {
+            
+        },
+        filters: {
+            
         }
     }
 </script>
