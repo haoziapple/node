@@ -24,7 +24,7 @@ module.exports = {
         // 清理dist编译文件夹
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'Try HtmlWebpackPlugin',
             // 使用chunks指定导入哪些js
             chunks: ['index'],
         }),
