@@ -143,6 +143,9 @@ export default {
         this.spanRight = 21;
       }
     }
+  },
+  filters: {
+    
   }
 };
 </script>
