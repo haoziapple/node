@@ -12,14 +12,13 @@ export default new Router({
       path: '/',
       name: 'index',
       component: Full,
-      children: [
-        {
-          path: '/formDemo',
-          name: 'formDemo',
-          component: FormDemo
-        },
-        { path: '/tableDemo/:id', name: 'tableDemo', component: TableDemo },
-      ]
+
     },
+    {
+      path: '/formDemo',
+      name: 'formDemo',
+      component: FormDemo
+    },
+    { path: '/tableDemo/:id', name: 'tableDemo', component: TableDemo },
   ]
 })
