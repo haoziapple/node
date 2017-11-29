@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import FormDemo from '@/components/FormDemo'
 import TableDemo from '@/components/TableDemo'
 import Full from '@/containers/Full'
+
+import AllSimpleJob from '@/views/AllSimpleJob'
 Vue.use(Router)
 
 export default new Router({
@@ -12,6 +14,12 @@ export default new Router({
       path: '/',
       name: 'index',
       component: Full,
+      children: [
+        {
+          path: 'allSimpleJob',
+          component: AllSimpleJob
+        }
+      ]
 
     },
     {

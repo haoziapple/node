@@ -1,36 +1,33 @@
 <template>
 <div class="head-navbar">
-    <Menu mode="horizontal" :theme="theme1" active-name="1">
-        <MenuItem name="1">
-            <Icon type="ios-paper"></Icon>
-            内容管理
-        </MenuItem>
-        <MenuItem name="2">
+    <Menu mode="horizontal" :theme="theme1" active-name="job-stats" @on-select="route">
+        <Submenu name="job-stats">
+            <template slot="title">
+                <Icon type="stats-bars"></Icon>
+                任务查看
+            </template>
+            <MenuGroup title="一般任务">
+                <MenuItem name="all">全部</MenuItem>
+                <MenuItem name="unhandle">未执行任务</MenuItem>
+                <MenuItem name="success">已执行任务</MenuItem>
+                <MenuItem name="fail">失败任务</MenuItem>
+            </MenuGroup>
+            <MenuGroup title="Cron任务">
+                <MenuItem name="cron">
+                    全部
+                </MenuItem>
+            </MenuGroup>
+        </Submenu>
+        <MenuItem name="user-admin">
             <Icon type="ios-people"></Icon>
             用户管理
         </MenuItem>
-        <Submenu name="3">
-            <template slot="title">
-                <Icon type="stats-bars"></Icon>
-                统计分析
-            </template>
-            <MenuGroup title="使用">
-                <MenuItem name="3-1">新增和启动</MenuItem>
-                <MenuItem name="3-2">活跃分析</MenuItem>
-                <MenuItem name="3-3">时段分析</MenuItem>
-            </MenuGroup>
-            <MenuGroup title="留存">
-                <MenuItem name="3-4">用户留存</MenuItem>
-                <MenuItem name="3-5">流失用户</MenuItem>
-            </MenuGroup>
-        </Submenu>
-        <MenuItem name="4">
+        <MenuItem name="service-info">
             <Icon type="settings"></Icon>
-            综合设置
+            服务详情
         </MenuItem>
     </Menu>
-    <!-- <br>
-    <p>Change theme</p>
+    <!-- <p>Change theme</p>
     <RadioGroup v-model="theme1">
         <Radio label="light"></Radio>
         <Radio label="dark"></Radio>
@@ -45,6 +42,14 @@ export default {
     return {
       theme1: "primary"
     };
+  },
+  methods: {
+    route(name) {
+      console.log(name);
+      if (name == "all") {
+        this.$router.push({ path: "/allSimpleJob" });
+      }
+    }
   }
 };
 </script>
