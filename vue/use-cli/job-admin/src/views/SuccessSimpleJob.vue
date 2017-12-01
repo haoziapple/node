@@ -1,6 +1,13 @@
 <template>
-    <!-- 查看所有一般定时任务 -->
-    <Table border :columns="columns7" :data="data6"></Table>
+    <div>
+    <Collapse value="1">
+      <Panel name="1">
+          查看执行成功的定时任务
+          <p slot="content">被调用方返回200则执行成功，任务会自动结束</p>
+      </Panel>
+    </Collapse>
+      <Table border :columns="columns7" :data="data6"></Table>
+    </div>
 </template>
 <script>
 import { fetchList } from "@/api/trigger";;

@@ -5,7 +5,9 @@ import FormDemo from '@/components/FormDemo'
 import TableDemo from '@/components/TableDemo'
 import Full from '@/containers/Full'
 
-import AllSimpleJob from '@/views/AllSimpleJob'
+import FailSimpleJob from '@/views/FailSimpleJob'
+import UnhandleSimpleJob from '@/views/UnhandleSimpleJob'
+import SuccessSimpleJob from '@/views/SuccessSimpleJob'
 Vue.use(Router)
 
 export default new Router({
@@ -16,9 +18,17 @@ export default new Router({
       component: Full,
       children: [
         {
-          path: 'allSimpleJob',
-          component: AllSimpleJob
-        }
+          path: 'failSimpleJob',
+          component: FailSimpleJob
+        },
+        {
+          path: 'unhandleSimpleJob',
+          component: UnhandleSimpleJob
+        },
+        {
+          path: 'successSimpleJob',
+          component: SuccessSimpleJob
+        },
       ]
 
     },

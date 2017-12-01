@@ -7,7 +7,6 @@
                 任务查看
             </template>
             <MenuGroup title="一般任务">
-                <MenuItem name="all">全部</MenuItem>
                 <MenuItem name="unhandle">未执行任务</MenuItem>
                 <MenuItem name="success">已执行任务</MenuItem>
                 <MenuItem name="fail">失败任务</MenuItem>
@@ -46,9 +45,13 @@ export default {
   methods: {
     route(name) {
       console.log(name);
-      if (name == "all") {
-        this.$router.push({ path: "/allSimpleJob" });
+      if (name == "fail") {
+        this.$router.push({ path: "/failSimpleJob" });
       }
+      if (name == "unhandle")
+        this.$router.push({ path: "/unhandleSimpleJob"});
+      if (name == "success")
+        this.$router.push({ path: "/successSimpleJob"})
     }
   }
 };
