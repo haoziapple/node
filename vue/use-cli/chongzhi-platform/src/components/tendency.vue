@@ -38,9 +38,7 @@
                     toolbox: {
                         show: true,
                         feature: {
-                            dataZoom: {
-                                yAxisIndex: 'none'
-                            },
+                            
                             dataView: {readOnly: false},
                             magicType: {type: ['bar', 'line']},
                             restore: {},

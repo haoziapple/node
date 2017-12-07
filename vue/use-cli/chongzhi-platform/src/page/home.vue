@@ -3,12 +3,30 @@
 		<section class="data_section">
 			<header class="section_title">数据统计</header>
 			<el-row :gutter="20" style="margin-bottom: 10px;">
+			<div class="time-picker-block">
+				<el-col :span="4">
+					<p class="demonstration" style="text-align:right;">时间：</p>
+				</el-col>
+				<el-col :span="4">
+					<el-date-picker
+					v-model="selectDateSpan"
+					type="datetimerange"
+					:picker-options="pickerOptions1"
+					range-separator="至"
+					start-placeholder="开始日期"
+					end-placeholder="结束日期"
+					align="center">
+					</el-date-picker>
+				</el-col>
+			</div>
+			</el-row>
+			<el-row :gutter="20" justify="center" type="flex" style="margin-bottom: 10px;">
                 <el-col :span="4"><div class="data_list today_head"><span class="data_num head">当日数据：</span></div></el-col>
 				<el-col :span="4"><div class="data_list"><span class="data_num">{{userCount}}</span> 新增用户</div></el-col>
 				<el-col :span="4"><div class="data_list"><span class="data_num">{{orderCount}}</span> 新增订单</div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{adminCount}}</span> 新增管理员</div></el-col>
 			</el-row>
-            <el-row :gutter="20">
+            <el-row :gutter="20" justify="center" type="flex" >
                 <el-col :span="4"><div class="data_list all_head"><span class="data_num head">总数据：</span></div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allUserCount}}</span> 注册用户</div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allOrderCount}}</span> 订单</div></el-col>
@@ -35,6 +53,28 @@
                 allAdminCount: null,
     			sevenDay: [],
     			sevenDate: [[],[],[]],
+				pickerOptions1: {
+					shortcuts: [{
+						text: '最近一周',
+						onClick(picker) {
+							const end = new Date();
+							const start = new Date();
+							start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+							picker.$emit('pick', [start, end]);
+						}
+					},
+					{
+						text: '最近一个月',
+						onClick(picker) {
+						const end = new Date();
+						const start = new Date();
+						start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+						picker.$emit('pick', [start, end]);
+						}
+					}]
+				},
+				// 选择的时间跨度
+				selectDateSpan: ''
     		}
     	},
     	components: {
