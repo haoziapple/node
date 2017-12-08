@@ -1,12 +1,18 @@
 # chongzhi-platform
 
-> A Vue.js project
+> 充值平台管理台前端项目
+
+## 基本技术架构
+- 前端框架：[Vue.js](https://cn.vuejs.org/)
+- UI组件库：[element-UI](http://element-cn.eleme.io/#/zh-CN)
 
 ## Build Setup
-
 ``` bash
+# 安装cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
 # install dependencies
-npm install
+cnpm install
 
 # serve with hot reload at localhost:8080
 npm run dev
