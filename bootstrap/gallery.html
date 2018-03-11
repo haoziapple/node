@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="stylesheet" href="gallery/blueimp-gallery.min.css">
+    <style>
+        a {
+            display: inline-flex;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>你好，世界！</h1>
+
+    <div id="links" class="pictures">
+        <a href="http://file.xiao6.com/img//20180311/hybx/8584540311112622412.jpg" title="Banana">
+            <img src="http://file.xiao6.com/img//20180311/hybx/8584540311112622412.jpg" alt="Banana">
+        </a>
+        <a href="http://file.xiao6.com/img//20180311/hybx/8030170311112531539.jpg" title="Apple">
+            <img src="http://file.xiao6.com/img//20180311/hybx/8030170311112531539.jpg" alt="Apple">
+        </a>
+        <a href="http://file.xiao6.com/img//20180311/hybx/0635370311112519285.jpg" title="Orange">
+            <img src="http://file.xiao6.com/img//20180311/hybx/0635370311112519285.jpg" alt="Orange">
+        </a>
+    </div>
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-carousel"> -->
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="gallery/blueimp-gallery.min.js"></script>
+    <script>
+        var baseUrl = "http://file.xiao6.com/img";
+        var row = '<a href="http://file.xiao6.com/img//20180311/hybx/8584540311112622412.jpg" title="Banana">' +
+            '<img src="http://file.xiao6.com/img//20180311/hybx/8584540311112622412.jpg" alt="Banana">' +
+            '</a>';
+        $.getJSON("./gallery/weibo-xiao6.txt", function(data) {
+            for(var i=0; i<10; i++) {
+                var row = '<a href="http://file.xiao6.com/img' + data[0] + '" title="Banana">' +
+                        '<img src="http://file.xiao6.com/img' + data[0] + '" alt="Banana">' +
+                        '</a>';
+            }
+            $(".pictures").append(row);
+        });
+    </script>
+    <script>
+        document.getElementById('links').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+        };
+    </script>
+    <!-- <script>
+        blueimp.Gallery(
+            document.getElementById('links').getElementsByTagName('a'),
+            {
+                container: '#blueimp-gallery-carousel',
+                carousel: true
+            }
+        );
+    </script> -->
+</body>
+
+</html>

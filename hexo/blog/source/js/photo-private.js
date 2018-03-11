@@ -6,8 +6,8 @@ function loadMyPhotos(page) {
     var end = start + offset;
 
 
-    // $.getJSON("weibo-xiao6.json", function (data) {
-    $.getJSON("output.json", function (data) {
+    $.getJSON("weibo-xiao6.json", function (data) {
+    // $.getJSON("output.json", function (data) {
         var li = "";
         var rowNum = 1;
         // 清空img-box
@@ -17,12 +17,14 @@ function loadMyPhotos(page) {
         $(".img-box").append(row);
         for (var i = start; i < end && i < data.length; i++) {
             // 载入row中的图片
-            li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
-                '<img class="img-responsive" src="http://osus8erpv.bkt.clouddn.com/' + data[i] + '?raw=true" />' +
-                '</div>';
             // li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
-            // '<img class="img-responsive" src="http://file.xiao6.com/img/' + data[i] + '?raw=true" />' +
-            // '</div>';
+            //     '<img class="img-responsive" src="http://osus8erpv.bkt.clouddn.com/' + data[i] + '?raw=true" />' +
+            //     '</div>';
+            li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
+            '<a href="http://file.xiao6.com/img/' + data[i] + '"title="Orange">' +
+            '<img class="img-responsive photo" src="http://file.xiao6.com/img/' + data[i] + '?raw=true" />' +
+            '</a>' +
+            '</div>';
             $(".img-box-ul" + rowNum).append(li);
 
             // 每行4张图片
@@ -36,8 +38,8 @@ function loadMyPhotos(page) {
 };
 
 $.ajaxSettings.async = false;
-// $.getJSON("weibo-xiao6.json", function (data) {
-$.getJSON("output.json", function (data) {
+$.getJSON("weibo-xiao6.json", function (data) {
+// $.getJSON("output.json", function (data) {
     var li = "";
     var rowNum = 1;
     var page = 1;
@@ -47,12 +49,14 @@ $.getJSON("output.json", function (data) {
     var row = '<div class="img-box-ul' + rowNum + ' row"></div>';
     $(".img-box").append(row);
     for (var i = 0; i < 20 && i < data.length; i++) {
-        li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
-            '<img class="img-responsive" src="http://osus8erpv.bkt.clouddn.com/' + data[i] + '?raw=true" />' +
-            '</div>';
         // li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
-        //     '<img class="img-responsive" src="http://file.xiao6.com/img/' + data[i] + '?raw=true" />' +
+        //     '<img class="img-responsive" src="http://osus8erpv.bkt.clouddn.com/' + data[i] + '?raw=true" />' +
         //     '</div>';
+        li = '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">' +
+            '<a href="http://file.xiao6.com/img/' + data[i] + '"title="Orange">' +
+            '<img class="img-responsive photo" src="http://file.xiao6.com/img/' + data[i] + '?raw=true" />' +
+            '</a>' +
+            '</div>';
         $(".img-box-ul" + rowNum).append(li);
         if ((i + 1) % 4 == 0) {
             rowNum += 1;

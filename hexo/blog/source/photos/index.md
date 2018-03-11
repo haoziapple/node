@@ -5,13 +5,16 @@ noDate: 'true'
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <!--<script src="/js/jquery-2.1.0.min.js"></script>-->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<script src="/js/bootstrap.min.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 # 个人相册
 <style>
 	.myPhotosList {
 		display: inline-flex;
+	}
+	.photo {
+		height: 250px;
 	}
 	.nav>li>a {
     position: static;
@@ -29,7 +32,7 @@ noDate: 'true'
 	</ul>
 </div>
 
-<script src="/js/photo.js"></script>
+<script src="/js/photo-private.js"></script>
 <script>
 $("li.mylist").click(function () {
     console.log($(this).text());
