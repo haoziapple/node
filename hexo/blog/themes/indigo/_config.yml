@@ -12,11 +12,12 @@ menu:
     text: 主页
     url: /
   archives:
+    text: 所有文章
     url: /archives
   tags:
     url: /tags
   th-list:
-    text: Categories
+    text: 文章分类
     url: /categories
   github:
     url: https://github.com/haoziapple
@@ -48,8 +49,8 @@ color: '#3F51B5'
 
 # 页面标题
 tags_title: Tags
-archives_title: Archives
-categories_title: Categories
+archives_title: 所有文章
+categories_title: 文章分类
 
 # 文章截断
 excerpt_render: false

@@ -32,7 +32,7 @@ noDate: 'true'
 	</ul>
 </div>
 
-<script src="/js/photo-private.js"></script>
+<script src="/js/photo.js"></script>
 <script>
 $("li.mylist").click(function () {
     console.log($(this).text());
