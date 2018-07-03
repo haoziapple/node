@@ -3,7 +3,13 @@ title: 年中--新的起点
 category: 个人计划
 date: 2018-07-03 19:58:50
 tags:
+- plan
 ---
 
-# 个人计划:记录计划，努力执行
-> hexo new plan "new plan" --path plan/new-plan
+# 年中计划
+> 人生就是不断的出发
+    今年已过一半，最近总感觉需要沉下来好好总结了，正好趁着出差的机会，沉淀一下。
+    来新公司也已经半年了，先总结一下工作成果：
+- 日志格式统一化：logback+ELK
+- CMS：参考jeeCMS
+- 基于springcloud的各种优化
