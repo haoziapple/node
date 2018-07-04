@@ -54,7 +54,7 @@ categories_title: 文章分类
 
 # 文章截断
 excerpt_render: false
-excerpt_length: 200
+excerpt_length: 100
 excerpt_link: 阅读全文...
 mathjax: false
 archive_yearly: true
@@ -75,7 +75,7 @@ reward:
 search: true
 
 # 是否大屏幕下文章页隐藏导航
-hideMenu: false
+hideMenu: true
 
 # 是否开启toc
 # toc: false
@@ -137,8 +137,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 嗯?去哪里了?
+  normal: life goes on!
+  leave: Wang Hao -- A rampage coder！
 
 # 设置为 true 发布后将使用 unpkg cdn
 cdn: true
