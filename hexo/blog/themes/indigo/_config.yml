@@ -25,9 +25,6 @@ menu:
   weibo:
     url: http://weibo.com/u/1842082177
     target: _blank
-  picture-o:
-    text: photos
-    url: /photos
   code:
     text: notes
     url: /notes
